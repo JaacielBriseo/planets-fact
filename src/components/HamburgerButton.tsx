@@ -4,7 +4,7 @@ export const HamburgerButton = () => {
 	const dispatch = useAppDispatch();
 	return (
 		<div className='w-6 h-4'>
-			<button onClick={() => dispatch(toggleMobileMenu())} type='button' className='flex flex-col space-y-1'>
+			<button onClick={() => dispatch(toggleMobileMenu())} type='button'>
 				<svg xmlns='http://www.w3.org/2000/svg' width='24' height='17'>
 					<g fill={`${isMobileMenuOpen ? '#38384F' : '#FFF'}`} fillRule='evenodd'>
 						<path d='M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z' />
