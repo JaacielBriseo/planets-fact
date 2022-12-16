@@ -1,12 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
-import { Earth, Jupiter, Mars, Menu, Mercury, Neptune, Saturn, Uranus, Venus } from '../pages';
+import { Menu } from '../components';
+import { Earth, Home, Jupiter, Mars, Mercury, Neptune, Saturn, Uranus, Venus } from '../pages';
 
 export const PlanetsRouter = () => {
 	return (
 		<div className='bg-Semiblack min-h-screen bg-stars p-5 text-White'>
 			<Menu />
 			<Routes>
-				<Route path='/' element={<Mercury />} />
+				<Route path='/' element={<Home />} />
+				<Route path='/mercury' element={<Mercury />} />
 				<Route path='/earth' element={<Earth />} />
 				<Route path='/jupiter' element={<Jupiter />} />
 				<Route path='/mars' element={<Mars />} />
