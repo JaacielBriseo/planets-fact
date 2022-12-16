@@ -21,6 +21,9 @@ module.exports = {
 				Antonio: ['Antonio', 'sans-serif'],
 				Spartan: ['League Spartan', 'sans-serif'],
 			},
+			backgroundImage: {
+				stars: "url('assets/background-stars.svg')",
+			},
 		},
 	},
 	plugins: [],

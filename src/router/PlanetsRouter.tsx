@@ -3,7 +3,7 @@ import { Earth, Jupiter, Mars, Menu, Mercury, Neptune, Saturn, Uranus, Venus } f
 
 export const PlanetsRouter = () => {
 	return (
-		<>
+		<div className='bg-Semiblack min-h-screen bg-stars p-5'>
 			<Routes>
 				<Route path='/' element={<Menu />} />
 				<Route path='/earth' element={<Earth />} />
@@ -15,6 +15,6 @@ export const PlanetsRouter = () => {
 				<Route path='/uranus' element={<Uranus />} />
 				<Route path='/venus' element={<Venus />} />
 			</Routes>
-		</>
+		</div>
 	);
 };

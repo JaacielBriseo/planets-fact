@@ -1,6 +1,9 @@
+import { PlanetsRouter } from './router/PlanetsRouter';
 
 export const PlanetsSite = () => {
-  return (
-    <div>PlanetsSite</div>
-  )
-}
+	return (
+		<>
+			<PlanetsRouter />
+		</>
+	);
+};
