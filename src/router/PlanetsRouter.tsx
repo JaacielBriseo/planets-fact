@@ -4,7 +4,7 @@ import { Earth, Home, Jupiter, Mars, Mercury, Neptune, Saturn, Uranus, Venus } f
 
 export const PlanetsRouter = () => {
 	return (
-		<div className='bg-Semiblack min-h-screen bg-stars p-5 text-White'>
+		<div className='bg-stars p-5 text-White'>
 			<Menu />
 			<Routes>
 				<Route path='/' element={<Home />} />

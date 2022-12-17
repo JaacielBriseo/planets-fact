@@ -1,9 +1,11 @@
+import { NavbarButton } from './NavbarButton';
+
 export const Navbar = () => {
 	return (
-		<nav className="flex justify-around uppercase p-1 mt-3 text-sm">
-			<p>Overview</p>
-			<p>structure</p>
-			<p>surface</p>
+		<nav className='flex justify-between p-1 mt-3 border-b'>
+			<NavbarButton name='overview' />
+			<NavbarButton name='structure' />
+			<NavbarButton name='surface' />
 		</nav>
 	);
 };
