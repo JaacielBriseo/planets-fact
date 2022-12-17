@@ -1,5 +1,10 @@
 import { setContent, useAppDispatch } from '../app';
-export const NavbarButton = ({ name }: { name: string }) => {
+interface NavbarButtonProps {
+	name: string;
+	isActive: boolean;
+	borderColor:string
+}
+export const NavbarButton = ({ name, isActive,borderColor }: NavbarButtonProps) => {
 	const dispatch = useAppDispatch();
 
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -7,7 +12,10 @@ export const NavbarButton = ({ name }: { name: string }) => {
 	};
 
 	return (
-		<button onClick={handleClick} name={name} className='w-[73px] uppercase font-bold font-Spartan text-xs border-b-2'>
+		<button
+		  onClick={handleClick}
+		  name={name} 
+		  className={`w-16 uppercase font-bold font-Spartan text-xs border-b-[3px] ${isActive && borderColor}`}>
 			{name}
 		</button>
 	);

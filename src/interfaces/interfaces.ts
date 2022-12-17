@@ -27,8 +27,8 @@ export interface InitialStateProps {
 	planets: Planets[];
 	isMobileMenuOpen: boolean;
 	content: {
-		isOverview: boolean;
-		isStructure: boolean;
-		isSurface: boolean;
+		isOverviewActive: boolean;
+		isStructureActive: boolean;
+		isSurfaceActive: boolean;
 	};
 }

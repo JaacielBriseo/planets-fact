@@ -1,21 +1,24 @@
 import { useAppSelector } from '../app';
 import { jupiter, jupiterInternal, geologyJupiter } from '../assets';
 import { Navbar, PlanetImage, PlanetPrincipalInfo, PlanetSecondaryInfo, SecondaryInfoData } from '../components';
+import { getContentAndSource,getPlanetData } from '../helpers';
 import { PlanetView } from '../views';
 
 export const Jupiter = () => {
 	const { planets, content } = useAppSelector((state) => state.planets);
-	const { isOverview, isStructure, isSurface } = content;
-	const jupiterData = planets.find((planet) => planet.name === 'Jupiter');
-	const { geology, name, overview, radius, revolution, rotation, structure, temperature } = jupiterData!;
+	const { isOverviewActive, isStructureActive, isSurfaceActive } = content;
+	const { geology, name, overview, radius, revolution, rotation, structure, temperature } = getPlanetData(planets,'Jupiter')
+	
 	return (
 		<PlanetView>
-			<Navbar />
-			<PlanetImage Img={isOverview ? jupiter : isStructure ? jupiterInternal : isSurface ? geologyJupiter : ''} />
+			<Navbar borderColor='border-b-MidOrange'/>
+			<PlanetImage
+				Img={isOverviewActive ? jupiter : isStructureActive ? jupiterInternal : isSurfaceActive ? geologyJupiter : ''}
+			/>
 			<PlanetPrincipalInfo
 				title={name}
-				text={isOverview ? overview.content : isStructure ? structure.content : isSurface ? geology.content : ''}
-				source={isOverview ? overview.source : isStructure ? structure.source : isSurface ? geology.source : ''}
+				{...getContentAndSource(isOverviewActive, isStructureActive, isSurfaceActive, overview, geology, structure)}
+
 			/>
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />

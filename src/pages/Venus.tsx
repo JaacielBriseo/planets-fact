@@ -1,21 +1,26 @@
 import { useAppSelector } from '../app';
 import { venus, venusInternal, geologyVenus } from '../assets';
 import { Navbar, PlanetImage, PlanetPrincipalInfo, PlanetSecondaryInfo, SecondaryInfoData } from '../components';
+import { getContentAndSource, getPlanetData } from '../helpers';
 import { PlanetView } from '../views';
 
 export const Venus = () => {
 	const { planets, content } = useAppSelector((state) => state.planets);
-	const { isOverview, isStructure, isSurface } = content;
-	const venusData = planets.find((planet) => planet.name === 'Venus');
-	const { geology, name, overview, radius, revolution, rotation, structure, temperature } = venusData!;
+	const { isOverviewActive, isStructureActive, isSurfaceActive } = content;
+	const { geology, name, overview, radius, revolution, rotation, structure, temperature } = getPlanetData(
+		planets,
+		'Venus'
+	);
+
 	return (
 		<PlanetView>
-			<Navbar />
-			<PlanetImage Img={isOverview ? venus : isStructure ? venusInternal : isSurface ? geologyVenus : ''} />
+			<Navbar borderColor='border-b-YellowLike' />
+			<PlanetImage
+				Img={isOverviewActive ? venus : isStructureActive ? venusInternal : isSurfaceActive ? geologyVenus : ''}
+			/>
 			<PlanetPrincipalInfo
 				title={name}
-				text={isOverview ? overview.content : isStructure ? structure.content : isSurface ? geology.content : ''}
-				source={isOverview ? overview.source : isStructure ? structure.source : isSurface ? geology.source : ''}
+				{...getContentAndSource(isOverviewActive, isStructureActive, isSurfaceActive, overview, geology, structure)}
 			/>
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />

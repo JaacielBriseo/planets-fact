@@ -1,1 +1,1 @@
-export * from './PlanetsRouter'
+export * from './PlanetsRouter';

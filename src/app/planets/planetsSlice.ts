@@ -6,9 +6,9 @@ const initialState: InitialStateProps = {
 	planets: planetsData,
 	isMobileMenuOpen: false,
 	content: {
-		isOverview: true,
-		isStructure: false,
-		isSurface: false,
+		isOverviewActive: true,
+		isStructureActive: false,
+		isSurfaceActive: false,
 	},
 };
 export const planetsSlice = createSlice({
@@ -21,19 +21,19 @@ export const planetsSlice = createSlice({
 		setContent: (state: InitialStateProps, { payload }: { payload: string }) => {
 			switch (payload) {
 				case 'Overview':
-					state.content.isOverview = true;
-					state.content.isStructure = false;
-					state.content.isSurface = false;
+					state.content.isOverviewActive = true;
+					state.content.isStructureActive = false;
+					state.content.isSurfaceActive = false;
 					break;
 				case 'Structure':
-					state.content.isOverview = false;
-					state.content.isStructure = true;
-					state.content.isSurface = false;
+					state.content.isOverviewActive = false;
+					state.content.isStructureActive = true;
+					state.content.isSurfaceActive = false;
 					break;
 				case 'Surface':
-					state.content.isOverview = false;
-					state.content.isStructure = false;
-					state.content.isSurface = true;
+					state.content.isOverviewActive = false;
+					state.content.isStructureActive = false;
+					state.content.isSurfaceActive = true;
 					break;
 				default:
 					break;
