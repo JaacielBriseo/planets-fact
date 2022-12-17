@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import { Menu } from '../components';
 import { Earth, Home, Jupiter, Mars, Mercury, Neptune, Saturn, Uranus, Venus } from '../pages';
+import { Menu } from '../components';
 
 export const PlanetsRouter = () => {
 	return (
-		<div className='bg-stars p-5 text-White'>
+		<div className='p-5 text-White'>
 			<Menu />
 			<Routes>
 				<Route path='/' element={<Home />} />

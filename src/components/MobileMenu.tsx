@@ -6,7 +6,7 @@ export const MobileMenu = () => {
 	const { planets } = useAppSelector((state) => state.planets);
 
 	return (
-		<div className='w-80 h-[487px] p-2 fixed top-16 left-6 z-50 bg-Semiblack'>
+		<div className='w-80 h-[487px] p-2 fixed top-16 left-0 z-50 bg-Semiblack'>
 			<ul className='divide-y divide-DarkGray text-White uppercase font-Spartan tracking-wider'>
 				{planets.map((planet) => (
 					<li key={planet.name} className='flex items-center justify-between space-y-14'>

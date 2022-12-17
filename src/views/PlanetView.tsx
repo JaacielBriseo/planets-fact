@@ -5,5 +5,5 @@ interface PlanetViewProps {
 }
 
 export const PlanetView = ({ children }: PlanetViewProps) => {
-	return <div>{children}</div>;
+	return <main>{children}</main>;
 };

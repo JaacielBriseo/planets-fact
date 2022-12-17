@@ -1,17 +1,23 @@
 import { useAppSelector } from '../app';
 import { PlanetView } from '../views';
-import { mercury } from '../assets';
+import { mercury, mercuryInternal, geologyMercury } from '../assets';
 import { Navbar, PlanetImage, PlanetPrincipalInfo, PlanetSecondaryInfo, SecondaryInfoData } from '../components';
 
 export const Mercury = () => {
-	const { planets } = useAppSelector((state) => state.planets);
+	const { planets, content } = useAppSelector((state) => state.planets);
+	const { isOverview, isStructure, isSurface } = content;
 	const mercuryData = planets.find((planet) => planet.name === 'Mercury');
-	const { overview, geology, images, name, radius, revolution, rotation, structure, temperature } = mercuryData!;
+	const { overview, geology, name, radius, revolution, rotation, structure, temperature } = mercuryData!;
+
 	return (
 		<PlanetView>
 			<Navbar />
-			<PlanetImage Img={mercury} />
-			<PlanetPrincipalInfo text={overview.content} title={name} source={overview.source} />
+			<PlanetImage Img={isOverview ? mercury : isStructure ? mercuryInternal : isSurface ? geologyMercury : ''} />
+			<PlanetPrincipalInfo
+				title={name}
+				text={isOverview ? overview.content : isStructure ? structure.content : isSurface ? geology.content : ''}
+				source={isOverview ? overview.source : isStructure ? structure.source : isSurface ? geology.source : ''}
+			/>
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />
 				<SecondaryInfoData data={revolution} title='revolution time' />

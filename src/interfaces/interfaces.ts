@@ -24,6 +24,11 @@ export interface Planets {
 }
 
 export interface InitialStateProps {
-	planets:Planets[],
-	isMobileMenuOpen:boolean
+	planets: Planets[];
+	isMobileMenuOpen: boolean;
+	content: {
+		isOverview: boolean;
+		isStructure: boolean;
+		isSurface: boolean;
+	};
 }
