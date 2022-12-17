@@ -1,4 +1,4 @@
-import { PlanetsRouter } from './router/PlanetsRouter';
+import { PlanetsRouter } from './router';
 
 export const PlanetsSite = () => {
 	return (
