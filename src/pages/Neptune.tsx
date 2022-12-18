@@ -1,27 +1,15 @@
-import { useAppSelector } from '../app';
-import { neptune, neptuneInternal, geologyNeptune } from '../assets';
-import { Navbar, PlanetImage, PlanetPrincipalInfo, PlanetSecondaryInfo, SecondaryInfoData } from '../components';
-import { getContentAndSource, getPlanetData } from '../helpers';
+import { usePlanet } from '../hooks';
 import { PlanetView } from '../views';
+import { Navbar, PlanetImage, PlanetPrincipalInfo, PlanetSecondaryInfo, SecondaryInfoData } from '../components';
 
 export const Neptune = () => {
-	const { planets, content } = useAppSelector((state) => state.planets);
-	const { isOverviewActive, isStructureActive, isSurfaceActive } = content;
-	const { geology, name, overview, radius, revolution, rotation, structure, temperature } = getPlanetData(
-		planets,
-		'Neptune'
-	);
+	const { content, img, name, radius, revolution, rotation, source, temperature } = usePlanet('Neptune');
 
 	return (
 		<PlanetView>
-			<Navbar borderColor='border-b-SkyBlue' />
-			<PlanetImage
-				Img={isOverviewActive ? neptune : isStructureActive ? neptuneInternal : isSurfaceActive ? geologyNeptune : ''}
-			/>
-			<PlanetPrincipalInfo
-				title={name}
-				{...getContentAndSource(isOverviewActive, isStructureActive, isSurfaceActive, overview, geology, structure)}
-			/>
+			<Navbar borderColor='border-b-Purplish' />
+			<PlanetImage Img={img} />
+			<PlanetPrincipalInfo title={name} content={content} source={source} />
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />
 				<SecondaryInfoData data={revolution} title='revolution time' />

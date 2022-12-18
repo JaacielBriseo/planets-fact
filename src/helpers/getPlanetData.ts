@@ -1,6 +1,6 @@
-import { Planets } from '../interfaces';
+import { GetPlanetDataFn } from '../interfaces';
 
-export const getPlanetData = (planets: Planets[], planetToGet: string): Planets => {
+export const getPlanetData: GetPlanetDataFn = (planets, planetToGet) => {
 	const planet = planets.find((planet) => planet.name === planetToGet);
 	if (planet) {
 		return planet;

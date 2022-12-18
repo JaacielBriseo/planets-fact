@@ -7,18 +7,18 @@
 html,
 body {
 	background-color: #070724;
-	background-image: url('assets/background-stars.svg');
-	animation: slide 60s infinite ;
+	background-image: url('../public/assets/background-stars.svg');
+	animation: slide 30s infinite;
 }
 
 @keyframes slide {
 	from {
-	  background-position: 0 0;
+		background-position: 0 0;
 	}
 	50% {
-	  background-position: 100% 0;
+		background-position: 100% 0;
 	}
 	to {
-	  background-position: 0 0;
+		background-position: 0 0;
 	}
-  }
+}

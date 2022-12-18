@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { toggleMobileMenu, useAppSelector, useAppDispatch } from '../app';
-import chevron from '../assets/icon-chevron.svg';
+
 
 export const MobileMenu = () => {
 	const { planets } = useAppSelector((state) => state.planets);
@@ -28,7 +28,7 @@ export const MobileMenu = () => {
 								{planet.name}
 							</NavLink>
 						</div>
-						<img src={chevron} alt='Chevron' />
+						<img src='./assets/icon-chevron.svg' alt='Chevron' />
 					</li>
 				))}
 			</ul>

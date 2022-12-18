@@ -1,6 +1,3 @@
-
-import { sourceIcon } from '../assets';
-
 interface PlanetPrincipalInfoProps {
 	title: string;
 	content: string;
@@ -8,7 +5,6 @@ interface PlanetPrincipalInfoProps {
 }
 
 export const PlanetPrincipalInfo = ({ title, content, source }: PlanetPrincipalInfoProps) => {
-
 	return (
 		<div className='h-60 text-center flex flex-col justify-evenly mb-7'>
 			<h1 className='font-Antonio text-4xl text-White'>{title}</h1>
@@ -18,7 +14,7 @@ export const PlanetPrincipalInfo = ({ title, content, source }: PlanetPrincipalI
 				<a href={source} className='underline'>
 					Wikipedia
 				</a>
-				<img src={sourceIcon} alt='src' />
+				<img src='./assets/icon-source.svg' alt='src' />
 			</div>
 		</div>
 	);

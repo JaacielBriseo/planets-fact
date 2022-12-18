@@ -1,10 +1,11 @@
 import { useAppSelector } from '../app';
-import { getPlanetData, getContentAndSource } from '../helpers';
+import { getPlanetData, getContentAndSource, getImage } from '../helpers';
 
 export const usePlanet = (planetToUse: string) => {
 	const { planets, content } = useAppSelector((state) => state.planets);
 	const { isOverviewActive, isStructureActive, isSurfaceActive } = content;
-	const { geology, name, overview, radius, revolution, rotation, structure, temperature } = getPlanetData(
+
+	const { geology, name, overview, radius, revolution, rotation, structure, temperature, images } = getPlanetData(
 		planets,
 		planetToUse
 	);
@@ -18,19 +19,16 @@ export const usePlanet = (planetToUse: string) => {
 		geology
 	);
 
+	const img = getImage(isOverviewActive, isStructureActive, isSurfaceActive, images);
+
 	return {
-		isOverviewActive,
-		isStructureActive,
-		isSurfaceActive,
-		overview,
-		geology,
-		structure,
-		rotation,
-		revolution,
-		radius,
-		temperature,
-		name,
 		content: planetContent,
+		img,
+		name,
+		radius,
+		revolution,
+		rotation,
 		source: planetSource,
+		temperature,
 	};
 };

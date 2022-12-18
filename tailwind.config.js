@@ -30,7 +30,7 @@ module.exports = {
 				Spartan: ['League Spartan', 'sans-serif'],
 			},
 			backgroundImage: {
-				stars: "url('assets/background-stars.svg')",
+				stars: "url('./assets/background-stars.svg')",
 			},
 		},
 	},

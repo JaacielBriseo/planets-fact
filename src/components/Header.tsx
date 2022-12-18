@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { HamburgerButton } from './';
+import { HamburgerButton } from '.';
 
 export const Header = () => {
 	const navigate = useNavigate();

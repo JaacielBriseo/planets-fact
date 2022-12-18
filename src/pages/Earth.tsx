@@ -1,28 +1,14 @@
-import { earth, earthInternal, geologyEarth } from '../assets';
 import { usePlanet } from '../hooks';
 import { PlanetView } from '../views';
 import { Navbar, PlanetImage, PlanetPrincipalInfo, PlanetSecondaryInfo, SecondaryInfoData } from '../components';
 
 export const Earth = () => {
-	const {
-		isOverviewActive,
-		isStructureActive,
-		isSurfaceActive,
-		rotation,
-		revolution,
-		radius,
-		temperature,
-		name,
-		content,
-		source,
-	} = usePlanet('Earth');
+	const { content, img, name, radius, revolution, rotation, source, temperature } = usePlanet('Earth');
 
 	return (
 		<PlanetView>
 			<Navbar borderColor='border-b-Purplish' />
-			<PlanetImage
-				Img={isOverviewActive ? earth : isStructureActive ? earthInternal : isSurfaceActive ? geologyEarth : ''}
-			/>
+			<PlanetImage Img={img} />
 			<PlanetPrincipalInfo title={name} content={content} source={source} />
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />
