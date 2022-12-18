@@ -13,12 +13,15 @@ export const Venus = () => {
 	);
 
 	return (
-		<PlanetView planet={getPlanetData(planets, 'Venus')}>
+		<PlanetView>
 			<Navbar borderColor='border-b-YellowLike' />
 			<PlanetImage
 				Img={isOverviewActive ? venus : isStructureActive ? venusInternal : isSurfaceActive ? geologyVenus : ''}
 			/>
-			<PlanetPrincipalInfo />
+			<PlanetPrincipalInfo
+				title={name}
+				{...getContentAndSource(isOverviewActive, isStructureActive, isSurfaceActive, overview, geology, structure)}
+			/>
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />
 				<SecondaryInfoData data={revolution} title='revolution time' />

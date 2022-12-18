@@ -1,16 +1,9 @@
-import { createContext, ReactElement } from 'react';
-import { Planets } from '../interfaces';
+import {  ReactElement } from 'react';
 
 interface PlanetViewProps {
 	children: ReactElement | ReactElement[];
-	planet: Planets;
 }
-export const PlanetContext = createContext({} as Planets);
-const { Provider } = PlanetContext;
-export const PlanetView = ({ children, planet }: PlanetViewProps) => {
-	return (
-		<Provider value={planet}>
-			<main>{children}</main>
-		</Provider>
-	);
+
+export const PlanetView = ({ children }: PlanetViewProps) => {
+	return <main>{children}</main>;
 };
