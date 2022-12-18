@@ -13,14 +13,13 @@ export const Earth = () => {
 	);
 
 	return (
-		<PlanetView>
+		<PlanetView planet={getPlanetData(planets, 'Earth')}>
 			<Navbar borderColor='border-b-Purplish' />
 			<PlanetImage
 				Img={isOverviewActive ? earth : isStructureActive ? earthInternal : isSurfaceActive ? geologyEarth : ''}
 			/>
 			<PlanetPrincipalInfo
-				title={name}
-				{...getContentAndSource(isOverviewActive, isStructureActive, isSurfaceActive, overview, geology, structure)}
+				
 			/>
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />
