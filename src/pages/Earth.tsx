@@ -7,9 +7,9 @@ export const Earth = () => {
 
 	return (
 		<PlanetView>
-			<Navbar borderColor='border-b-Purplish' />
+			<Navbar borderColor='border-b-Earth' extraClassname='md:hidden' />
 			<PlanetImage Img={img} />
-			<PlanetPrincipalInfo title={name} content={content} source={source} />
+			<PlanetPrincipalInfo title={name} content={content} source={source} bgColor='bg-Earth' />
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />
 				<SecondaryInfoData data={revolution} title='revolution time' />

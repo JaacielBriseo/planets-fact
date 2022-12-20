@@ -7,9 +7,9 @@ export const Saturn = () => {
 
 	return (
 		<PlanetView>
-			<Navbar borderColor='border-b-Purplish' />
+			<Navbar borderColor='border-b-Saturn' extraClassname='md:hidden'/>
 			<PlanetImage Img={img} />
-			<PlanetPrincipalInfo title={name} content={content} source={source} />
+			<PlanetPrincipalInfo title={name} content={content} source={source} bgColor='bg-Saturn'/>
 			<PlanetSecondaryInfo>
 				<SecondaryInfoData data={rotation} title='rotation time' />
 				<SecondaryInfoData data={revolution} title='revolution time' />
