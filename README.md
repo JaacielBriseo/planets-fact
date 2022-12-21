@@ -12,7 +12,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 - Live Site URL: [Live site](https://planets-fact-nine.vercel.app/)
