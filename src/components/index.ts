@@ -7,4 +7,5 @@ export { NavbarButton } from './NavbarButton';
 export { PlanetImage } from './PlanetImage';
 export { PlanetPrincipalInfo } from './PlanetPrincipalInfo';
 export { PlanetSecondaryInfo } from './PlanetSecondaryInfo';
+export { PlanetsList } from './PlanetsList';
 export { SecondaryInfoData } from './SecondaryInfoData';

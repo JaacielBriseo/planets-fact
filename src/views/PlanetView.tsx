@@ -5,5 +5,5 @@ interface PlanetViewProps {
 }
 
 export const PlanetView = ({ children }: PlanetViewProps) => {
-	return <main>{children}</main>;
+	return <main className='animate__animated animate__zoomInDown'>{children}</main>;
 };

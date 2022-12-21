@@ -1,21 +1,14 @@
-import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../app';
-import { Header, MobileMenu } from '.';
+import { Header, MobileMenu, PlanetsList } from '.';
 
 export const Menu = () => {
-	const { isMobileMenuOpen, planets } = useAppSelector((state) => state.planets);
+	const { isMobileMenuOpen } = useAppSelector((state) => state.planets);
 
 	return (
-		<>
+		<div className='lg:flex lg:items-center lg:border-b lg:border-b-DarkGray'>
 			<Header />
 			{isMobileMenuOpen && <MobileMenu />}
-			<ul className='hidden md:flex justify-evenly h-6 mt-7 font-Spartan text-xs font-bold tracking-wide border-b border-b-DarkGray uppercase'>
-				{planets.map(({ name }) => (
-					<NavLink key={name} to={name}>
-						{name}
-					</NavLink>
-				))}
-			</ul>
-		</>
+			<PlanetsList />
+		</div>
 	);
 };
