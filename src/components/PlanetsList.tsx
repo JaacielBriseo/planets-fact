@@ -12,14 +12,15 @@ export const PlanetsList = () => {
 		lg:w-full lg:space-x-5 lg:border-none '
 		>
 			{planets.map(({ name }) => (
-				<NavLink
-					key={name}
-					to={`/${name.toLowerCase()}`}
-					className='lg:text-xs lg:font-bold'
-					style={({ isActive }) => (isActive ? activeStyle : undefined)}
-				>
-					{name}
-				</NavLink>
+				<div key={name}>
+					<NavLink
+						to={`/${name.toLowerCase()}`}
+						className='lg:text-xs lg:font-bold'
+						style={({ isActive }) => (isActive ? activeStyle : undefined)}
+					>
+						{name}
+					</NavLink>
+				</div>
 			))}
 		</ul>
 	);
